@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { colors } from '../utils/colors';
 
+import Laptop from '../images/laptop.svg';
 import HeroImage from './hero-image';
 
 const StyledHero = styled.section`
@@ -24,7 +25,7 @@ const StyledText = styled.p`
 `;
 
 const StyledImageContainer = styled.div`
-    width: 80%;
+    width: 60%;
 `;
 
 const StyledButton = styled.a`
@@ -45,7 +46,7 @@ const StyledButton = styled.a`
 `;
 
 const Hero = () => (
-    <StyledHero>
+    <StyledHero id="hero">
         <div>
             <StyledText>
                 <span>Hello! 👋</span>
