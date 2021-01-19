@@ -46,6 +46,7 @@ const IndexPage = () => {
       ScrollTrigger.create({
         trigger: `#${item}`,
         start: 'top-=1px top+=1px',
+        markers: true,
         onEnter: () => {
           gsap.to(`.${item}`, {
             backgroundColor: colors.accent,

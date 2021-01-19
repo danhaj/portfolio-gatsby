@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { colors } from '../utils/colors';
 
-import Laptop from '../images/laptop.svg';
 import HeroImage from './hero-image';
 
 const StyledHero = styled.section`

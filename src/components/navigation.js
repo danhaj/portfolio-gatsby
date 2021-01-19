@@ -5,7 +5,7 @@ import { colors } from '../utils/colors';
 
 const StyledNav = styled.nav`
     position: fixed;
-    right: 20px;
+    right: 30px;
     top: 45%;
     display: flex;
     flex-direction: column;

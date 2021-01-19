@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Daniel Hajduk`,
+    description: `Portfolio`,
+    author: `@danhaj`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -18,8 +18,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `gatsby-portfolio`,
+        short_name: `portfolio`,
         start_url: `/`,
         background_color: `#201E1F`,
         theme_color: `#201E1F`,
@@ -28,5 +28,28 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
+    {
+      resolve: 'gatsby-source-github',
+      options: {
+        headers: {
+          Authorization: `Bearer `,
+        },
+        queries: [
+          `{ viewer {                 
+            pinnedItems(first: 5, types: REPOSITORY){
+              nodes {
+                ... on Repository {
+                  id                       
+                  name
+                  url
+                  description
+                  homepageUrl
+                }
+              }
+            }}
+          }`,
+        ],
+      },
+    },
   ],
 }
