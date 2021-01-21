@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { colors } from '../utils/colors';
-
-import HeroImage from './hero-image';
+import heroImage from '../images/hero.svg';
 
 const StyledHero = styled.section`
     width: 100%;
@@ -11,19 +10,30 @@ const StyledHero = styled.section`
     justify-content: space-between;
     align-items: center;
     padding: 0 5vw 0 10vw;
+    font-family: 'Montserrat';
 `;
 
-const StyledText = styled.p`
-    font-family: 'Montserrat';
+const StyledTitle = styled.p`
     font-weight: 900;
     font-size: 4vw;
+    margin: 0;
 
     span {
         color: ${colors.accent};
     }
 `;
 
-const StyledImageContainer = styled.div`
+const StyledSubtitle = styled.p`
+    font-weight: 900;
+    font-size: 1.5vw;
+    margin-bottom: 45px;
+
+    span {
+        color: ${colors.accent};
+    }
+`;
+
+const StyledImage = styled.img`
     width: 60%;
 `;
 
@@ -44,22 +54,22 @@ const StyledButton = styled.a`
     }
 `;
 
-const Hero = () => (
+const Hero = ({ content }) => (
     <StyledHero id="hero">
         <div>
-            <StyledText>
-                <span>Hello! 👋</span>
+            <StyledTitle>
+                <span>{ content.greetings }</span>
                 <br />
-                My name
-                is Daniel.
-            </StyledText>
+                { content.title }
+            </StyledTitle>
+            <StyledSubtitle>
+                <span>#</span> { content.subtitle }
+            </StyledSubtitle>
             <StyledButton href="#about">
-                About me        
+                { content.buttonText }
             </StyledButton>
         </div>
-        <StyledImageContainer>
-            <HeroImage />
-        </StyledImageContainer>
+        <StyledImage src={heroImage} />
     </StyledHero>
 );
 

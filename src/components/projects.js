@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import {useStaticQuery, graphql} from 'gatsby'
 import { colors } from '../utils/colors';
+
 import Project from './project';
 
 const StyledProjects = styled.section`
@@ -28,31 +28,13 @@ const StyledProjectsContainer = styled.section`
     row-gap: 20px;
 `;
 
-const Projects = () => {
-    const data = useStaticQuery(graphql`
-        query MyQuery {
-            githubViewer {
-                pinnedItems {
-                    nodes {
-                        name
-                        description
-                        url
-                    }
-                }
-            }
-        }
-    `);
-    
-    const projects = data.githubViewer.pinnedItems.nodes;
-
-    return (
-        <StyledProjects id="projects">
-            <StyledTitle>Projects</StyledTitle>
-            <StyledProjectsContainer>
-                { projects.map(item => <Project item={item} />) }
-            </StyledProjectsContainer>
-        </StyledProjects>
-    )
-}
-    
+const Projects = ({ projects }) => (
+    <StyledProjects id="projects">
+        <StyledTitle>Projects</StyledTitle>
+        <StyledProjectsContainer>
+            { projects.map(item => <Project item={item} />) }
+        </StyledProjectsContainer>
+    </StyledProjects>
+);
+  
 export default Projects;

@@ -1,7 +1,7 @@
 import React from 'react';
+import Img from "gatsby-image"
 import styled from 'styled-components';
 import { colors } from '../utils/colors';
-import AboutImg from '../images/about.jpg';
 
 const StyledAbout = styled.section`
     width: 100%;
@@ -30,29 +30,25 @@ const StyledText = styled.p`
     font-size: 1.3vw;
 `;
 
-const StyledImage = styled.img`
-    max-width: 30%;
-    max-height: auto;
-    padding: 10px;
+const StyledImage = styled(Img)`
+    width: 25%;
     border: 1px solid ${colors.darkAccent};
 `;
 
-const About = () => (
+const About = ({ content, image }) => (
     <StyledAbout id="about">
         <StyledTextContainer>
             <StyledTitle>
                 About me
             </StyledTitle>
             <StyledText>
-                My name is Daniel and I’m 20 years old. I have been learning programming and different technologies for few years. 
-                Mainly I’m involved in frontend but I’m also interested in mobile applications.
+                { content.about1 }
             </StyledText>
             <StyledText>
-                Currently I'm studying Computer Science (on weekends) and I would like to start working full-time as a 
-                <b> junior frontend developer</b>. 
+                { content.about2 }
             </StyledText>
         </StyledTextContainer>
-        <StyledImage src={AboutImg} />
+        <StyledImage fluid={image} />
     </StyledAbout>
 );
 
