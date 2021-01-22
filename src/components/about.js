@@ -7,7 +7,7 @@ const StyledAbout = styled.section`
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-    padding: 0 10vw;
+    padding: 10vh 10vw 0 10vw;
 `;
 
 const StyledTextContainer = styled.div`

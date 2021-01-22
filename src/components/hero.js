@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { colors } from '../utils/colors';
+import { heroInitialAnimation, heroScrollAnimation } from '../utils/animations';
 import heroImage from '../images/hero.svg';
 
 const StyledHero = styled.section`
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,14 +14,17 @@ const StyledHero = styled.section`
     font-family: 'Montserrat';
 `;
 
+const StyledGreetings = styled.p`
+    font-weight: 900;
+    font-size: 4vw;
+    color: ${colors.accent};
+    margin: 0;
+`;
+
 const StyledTitle = styled.p`
     font-weight: 900;
     font-size: 4vw;
     margin: 0;
-
-    span {
-        color: ${colors.accent};
-    }
 `;
 
 const StyledSubtitle = styled.p`
@@ -54,23 +58,38 @@ const StyledButton = styled.a`
     }
 `;
 
-const Hero = ({ content }) => (
-    <StyledHero id="hero">
-        <div>
-            <StyledTitle>
-                <span>{ content.greetings }</span>
-                <br />
-                { content.title }
-            </StyledTitle>
-            <StyledSubtitle>
-                <span>#</span> { content.subtitle }
-            </StyledSubtitle>
-            <StyledButton href="#about">
-                { content.buttonText }
-            </StyledButton>
-        </div>
-        <StyledImage src={heroImage} />
-    </StyledHero>
-);
+
+const Hero = ({ content }) => {
+    const greetings = useRef();
+    const title = useRef();
+    const subtitle = useRef();
+    const button = useRef();
+    const image = useRef();
+
+    useEffect(() => {
+        heroInitialAnimation(greetings, title, subtitle, button, image);
+        heroScrollAnimation(image);
+    });
+
+    return (
+        <StyledHero id="hero">
+            <div>
+                <StyledGreetings ref={greetings}>
+                    { content.greetings }
+                </StyledGreetings>
+                <StyledTitle ref={title}>
+                    { content.title }
+                </StyledTitle>
+                <StyledSubtitle ref={subtitle}>
+                    <span>#</span> { content.subtitle }
+                </StyledSubtitle>
+                <StyledButton ref={button} href="#about">
+                    { content.buttonText }
+                </StyledButton>
+            </div>
+            <StyledImage ref={image} src={heroImage} />
+        </StyledHero>
+    );
+}
 
 export default Hero;

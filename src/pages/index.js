@@ -49,7 +49,8 @@ const IndexPage = ({ data }) => {
     menuItems.forEach(item => {
       ScrollTrigger.create({
         trigger: `#${item}`,
-        start: 'top-=1px top+=1px',
+        start: 'top center',
+        end: 'bottom center',
         onEnter: () => {
           gsap.to(`.${item}`, {
             backgroundColor: colors.accent,
@@ -72,7 +73,7 @@ const IndexPage = ({ data }) => {
         },
       });
     })
-  })
+  });
 
   return (
     <>
