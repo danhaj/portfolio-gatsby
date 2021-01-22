@@ -41,12 +41,11 @@ const StyledImage = styled.img`
     width: 60%;
 `;
 
-const StyledButton = styled.a`
+const StyledButton = styled.button`
     background: none;
     font-family: 'Montserrat';
     font-size: 13px;
     color: ${colors.accent};
-    text-decoration: none;
     border: 1px solid ${colors.accent};
     padding: 15px 25px;
     cursor: pointer;
@@ -71,6 +70,11 @@ const Hero = ({ content }) => {
         heroScrollAnimation(image);
     });
 
+    const handleClick = () => {
+        const element = document.querySelector("#about");
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
+
     return (
         <StyledHero id="hero">
             <div>
@@ -83,7 +87,7 @@ const Hero = ({ content }) => {
                 <StyledSubtitle ref={subtitle}>
                     <span>#</span> { content.subtitle }
                 </StyledSubtitle>
-                <StyledButton ref={button} href="#about">
+                <StyledButton ref={button} onClick={handleClick}>
                     { content.buttonText }
                 </StyledButton>
             </div>

@@ -22,7 +22,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    scroll-behavior: smooth;
   }
 
   body {
@@ -81,7 +80,7 @@ const IndexPage = ({ data }) => {
       <GlobalStyle />
       <Navigation items={menuItems} />
       <Hero content={content.hero} />
-      <About content={content.about} image={image.childImageSharp.fluid} />
+      <About content={content.about} imageFluid={image.childImageSharp.fluid} />
       <Projects projects={projects.pinnedItems.nodes} />
       <Footer content={content.contact} />
     </>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { colors } from '../utils/colors';
 
@@ -10,10 +9,10 @@ const StyledNav = styled.nav`
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    z-index: 1;
 `;
 
-const StyledNavLink = styled(Link)`
-    display: block;
+const StyledNavLink = styled.div`
     width: 10px;
     height: 10px;
     margin: 5px 0;
@@ -22,10 +21,17 @@ const StyledNavLink = styled(Link)`
     cursor: pointer;
 `;
 
-const Navigation = ({ items }) => (
-    <StyledNav>
-        { items.map(item => <StyledNavLink key={item} className={item} to={`#${item}`} />) }
-    </StyledNav>
-);
+const Navigation = ({ items }) => {
+    const handleClick = item => {
+        const element = document.getElementById(item);
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    return (
+        <StyledNav>
+            { items.map(item => <StyledNavLink key={item} className={item} onClick={() => handleClick(item)} />) }
+        </StyledNav>
+    )
+};
 
 export default Navigation;
