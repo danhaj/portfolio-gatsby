@@ -1,15 +1,14 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { colors } from '../utils/colors';
 
-const StyledProject = styled(Link)`
+const StyledProject = styled.a`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
+    height: 150px;
     border: 1px solid ${colors.darkAccent};
     border-radius: 10px;
     text-decoration: none;
@@ -26,7 +25,7 @@ const StyledDescription = styled.p`
 `;
 
 const Project = ({ item }) => (
-    <StyledProject to={item.url}>
+    <StyledProject href={item.url}>
         <StyledName>
             { item.name }
         </StyledName>

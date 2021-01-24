@@ -6,12 +6,17 @@ import heroImage from '../images/hero.svg';
 
 const StyledHero = styled.section`
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 5vw 0 10vw;
     font-family: 'Montserrat';
+
+    @media (max-width: 1150px) {
+        text-align: center;
+        padding: 0 5vw;
+    }
 `;
 
 const StyledGreetings = styled.p`
@@ -19,12 +24,20 @@ const StyledGreetings = styled.p`
     font-size: 4vw;
     color: ${colors.accent};
     margin: 0;
+
+    @media (max-width: 1150px) {
+        font-size: 12vw;
+    }
 `;
 
 const StyledTitle = styled.p`
     font-weight: 900;
     font-size: 4vw;
     margin: 0;
+
+    @media (max-width: 1150px) {
+        font-size: 10vw;
+    }
 `;
 
 const StyledSubtitle = styled.p`
@@ -35,10 +48,19 @@ const StyledSubtitle = styled.p`
     span {
         color: ${colors.accent};
     }
+
+    @media (max-width: 1150px) {
+        font-size: 4vw;
+        margin: 15px 0 25px 0;
+    }
 `;
 
 const StyledImage = styled.img`
     width: 60%;
+
+    @media (max-width: 1150px) {
+        display: none;
+    }
 `;
 
 const StyledButton = styled.button`
@@ -47,13 +69,18 @@ const StyledButton = styled.button`
     font-size: 13px;
     color: ${colors.accent};
     border: 1px solid ${colors.accent};
-    padding: 15px 25px;
+    padding: 15px 30px;
     cursor: pointer;
 
     &:hover {
         background: ${colors.accent};
         color: ${colors.primary};
         transition-duration: 400ms;
+    }
+
+    @media (max-width: 1150px) {
+        font-size: 3vw;
+        padding: 15px 45px;
     }
 `;
 

@@ -6,9 +6,17 @@ import { aboutScrollAnimation } from '../utils/animations';
 
 const StyledAbout = styled.section`
     width: 100%;
+    height: 100vh;
     display: flex;
+    align-items: center;
     justify-content: space-evenly;
-    padding: 10vh 10vw 0 10vw;
+    padding: 0 10vw;
+
+    @media (max-width: 1150px) {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
 `;
 
 const StyledTextContainer = styled.div`
@@ -16,6 +24,11 @@ const StyledTextContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @media (max-width: 1150px) {
+        width: 90%;
+        text-align: center;
+    }
 `;
 
 const StyledTitle = styled.p`
@@ -24,17 +37,31 @@ const StyledTitle = styled.p`
     font-size: 3vw;
     color: ${colors.accent};
     margin: 0;
+
+    @media (max-width: 1150px) {
+        font-size: 10vw;
+    }
 `;
 
 const StyledText = styled.p`
     margin-bottom: 0;
     font-size: 1.3vw;
+
+    @media (max-width: 1150px) {
+        font-size: 3.5vw;
+    }
 `;
 
 const StyledImageContainer = styled.div`
     width: 25%;
     padding: 10px;
     border: 1px solid ${colors.darkAccent};
+
+    @media (max-width: 1150px) {
+        width: 70%;
+        padding: 5px;
+        margin-top: 2vh;
+    }
 `;
 
 const About = ({ content, imageFluid }) => {

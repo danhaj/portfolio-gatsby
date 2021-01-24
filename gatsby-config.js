@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Daniel Hajduk`,
-    description: `Portfolio`,
-    author: `@danhaj`,
+    description: `Junior Frontend Developer Portfolio`,
+    author: ``,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -34,7 +34,12 @@ module.exports = {
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        displayName: false
+      }
+    },
     `gatsby-transformer-remark`,
     {
       resolve: 'gatsby-source-github',
@@ -44,7 +49,7 @@ module.exports = {
         },
         queries: [
           `{ viewer {                 
-            pinnedItems(first: 5, types: REPOSITORY){
+            pinnedItems(first: 6, types: REPOSITORY){
               nodes {
                 ... on Repository {
                   id                       
