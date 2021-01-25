@@ -7,11 +7,17 @@ const StyledProject = styled.a`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     width: 100%;
     height: 150px;
     border: 1px solid ${colors.darkAccent};
     border-radius: 10px;
     text-decoration: none;
+
+    &:hover {
+        border-color: ${colors.accent};
+        transition-duration: 400ms;
+    }
 `;
 
 const StyledName = styled.p`
