@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { colors } from '../utils/colors';
 import { heroInitialAnimation, heroScrollAnimation } from '../utils/animations';
 import heroImage from '../images/hero.svg';
+import { media } from '../utils/media';
 
 const StyledHero = styled.section`
     width: 100%;
@@ -13,10 +14,10 @@ const StyledHero = styled.section`
     padding: 0 5vw 0 10vw;
     font-family: 'Montserrat';
 
-    @media (max-width: 1150px) {
+    ${media.phone`
         text-align: center;
         padding: 0 5vw;
-    }
+    `}
 `;
 
 const StyledGreetings = styled.p`
@@ -25,9 +26,13 @@ const StyledGreetings = styled.p`
     color: ${colors.accent};
     margin: 0;
 
-    @media (max-width: 1150px) {
+    ${media.phone`
         font-size: 12vw;
-    }
+    `}
+
+    ${media.tablet`
+        font-size: 6vw;
+    `}
 `;
 
 const StyledTitle = styled.p`
@@ -35,9 +40,13 @@ const StyledTitle = styled.p`
     font-size: 4vw;
     margin: 0;
 
-    @media (max-width: 1150px) {
+    ${media.phone`
         font-size: 10vw;
-    }
+    `}
+
+    ${media.tablet`
+        font-size: 6vw;
+    `}
 `;
 
 const StyledSubtitle = styled.p`
@@ -49,18 +58,22 @@ const StyledSubtitle = styled.p`
         color: ${colors.accent};
     }
 
-    @media (max-width: 1150px) {
+    ${media.phone`
         font-size: 4vw;
         margin: 15px 0 25px 0;
-    }
+    `}
+
+    ${media.tablet`
+        font-size: 2vw;
+    `}
 `;
 
 const StyledImage = styled.img`
     width: 60%;
 
-    @media (max-width: 1150px) {
+    ${media.phone`
         display: none;
-    }
+    `}
 `;
 
 const StyledButton = styled.button`
@@ -78,10 +91,10 @@ const StyledButton = styled.button`
         transition-duration: 400ms;
     }
 
-    @media (max-width: 1150px) {
+    ${media.phone`
         font-size: 3vw;
         padding: 15px 45px;
-    }
+    `}
 `;
 
 

@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { navigationInitialAnimation } from '../utils/animations';
 import { colors } from '../utils/colors';
+import { media } from '../utils/media';
 
 const StyledNav = styled.nav`
     position: fixed;
@@ -9,9 +10,13 @@ const StyledNav = styled.nav`
     top: 47vh;
     z-index: 1;
 
-    @media (max-width: 1150px) {
+    ${media.phone`
         display: none;
-    }
+    `}
+
+    ${media.tablet`
+        display: none;
+    `}
 `;
 
 const StyledNavLink = styled.div`

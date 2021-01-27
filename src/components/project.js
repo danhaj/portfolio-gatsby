@@ -10,6 +10,7 @@ const StyledProject = styled.a`
     text-align: center;
     width: 100%;
     height: 150px;
+    padding: 0 10px;
     border: 1px solid ${colors.darkAccent};
     border-radius: 10px;
     text-decoration: none;

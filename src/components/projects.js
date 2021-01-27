@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { projectsScrollAnimation } from '../utils/animations';
 import { colors } from '../utils/colors';
+import { media } from '../utils/media';
 
 import Project from './project';
 
@@ -13,10 +14,10 @@ const StyledProjects = styled.section`
     width: 100%;
     height: 100vh;
 
-    @media (max-width: 1150px) {
+    ${media.phone`
         height: auto;
         margin: 10vh 0;
-    }
+    `}
 `;
 
 const StyledTitle = styled.p`
@@ -27,9 +28,13 @@ const StyledTitle = styled.p`
     margin-top: 0;
     margin-bottom: 25px;
 
-    @media (max-width: 1150px) {
+    ${media.phone`
         font-size: 10vw;
-    }
+    `}
+
+    ${media.tablet`
+        font-size: 6vw;
+    `}
 `;
 
 const StyledProjectsContainer = styled.section`
@@ -40,10 +45,15 @@ const StyledProjectsContainer = styled.section`
     column-gap: 20px;
     row-gap: 20px;
 
-    @media (max-width: 1150px) {
+    ${media.phone`
         grid-template-columns: 90vw; 
         grid-template-rows: auto;
-    }
+    `}
+
+    ${media.tablet`
+        grid-template-columns: 40vw 40vw;
+        grid-template-rows: auto; 
+    `}
 `;
 
 const Projects = ({ projects }) => {

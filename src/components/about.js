@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import Img from "gatsby-image"
 import styled from 'styled-components';
 import { colors } from '../utils/colors';
+import { media } from '../utils/media';
 import { aboutScrollAnimation } from '../utils/animations';
 
 const StyledAbout = styled.section`
@@ -12,11 +13,15 @@ const StyledAbout = styled.section`
     justify-content: space-evenly;
     padding: 0 10vw;
 
-    @media (max-width: 1150px) {
+    ${media.phone`
         flex-direction: column;
         height: auto;
         min-height: 100vh;
-    }
+    `}
+
+    ${media.tablet`
+        padding: 0 5vw;
+    `}
 `;
 
 const StyledTextContainer = styled.div`
@@ -25,10 +30,10 @@ const StyledTextContainer = styled.div`
     flex-direction: column;
     justify-content: center;
 
-    @media (max-width: 1150px) {
+    ${media.phone`
         width: 90%;
         text-align: center;
-    }
+    `}
 `;
 
 const StyledTitle = styled.p`
@@ -38,18 +43,26 @@ const StyledTitle = styled.p`
     color: ${colors.accent};
     margin: 0;
 
-    @media (max-width: 1150px) {
+    ${media.phone`
         font-size: 10vw;
-    }
+    `}
+
+    ${media.tablet`
+        font-size: 6vw;
+    `}
 `;
 
 const StyledText = styled.p`
     margin-bottom: 0;
-    font-size: 1.3vw;
+    font-size: 20px;
 
-    @media (max-width: 1150px) {
-        font-size: 3.5vw;
-    }
+    ${media.phone`
+        font-size: 14px;
+    `}
+
+    ${media.tablet`
+        font-size: 16px;
+    `}
 `;
 
 const StyledImageContainer = styled.div`
@@ -57,11 +70,15 @@ const StyledImageContainer = styled.div`
     padding: 10px;
     border: 1px solid ${colors.darkAccent};
 
-    @media (max-width: 1150px) {
+    ${media.phone`
         width: 70%;
         padding: 5px;
-        margin-top: 2vh;
-    }
+        margin-top: 100px;
+    `}
+
+    ${media.tablet`
+        width: 40%;
+    `}
 `;
 
 const About = ({ content, imageFluid }) => {
