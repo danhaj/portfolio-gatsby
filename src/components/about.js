@@ -69,6 +69,7 @@ const StyledImageContainer = styled.div`
     width: 25%;
     padding: 10px;
     border: 1px solid ${colors.darkAccent};
+    max-width: 1000px;
 
     ${media.phone`
         width: 70%;
