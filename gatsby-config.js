@@ -37,8 +37,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
-        displayName: false
-      }
+        displayName: false,
+      },
     },
     `gatsby-transformer-remark`,
     {
@@ -65,4 +65,4 @@ module.exports = {
       },
     },
   ],
-}
+};
