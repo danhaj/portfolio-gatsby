@@ -54,7 +54,7 @@ const StyledTitle = styled.p`
 
 const StyledText = styled.p`
   margin-bottom: 0;
-  font-size: 20px;
+  font-size: 18px;
 
   ${media.phone`
     font-size: 14px;
